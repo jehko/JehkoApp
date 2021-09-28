@@ -1,0 +1,3 @@
+### getMember
+GET http://localhost:8080/api/v1/member/jehko3 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqZWhrbyIsImF1dGgiOiJST0xFX0FETUlOIiwiZXhwIjoxNjMxOTcxMDM3fQ.CiWPR61DG_vXlsQVBo2aHkKuKhhpTqkHk7AC7yyKG8Pg2RWuPuuBpWNqPZobUvx__pA6x-1BADvq9YO5CpK6rg
