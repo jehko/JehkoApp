@@ -1,6 +1,5 @@
 <template>
   <div class="main">
-    Main.vue
     <Login></Login>
   </div>
 </template>
@@ -16,10 +15,8 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 .main {
-  width: 800px;
-  height: 600px;
-  border: 1px solid black;
+  // background-color: red;
 }
 </style>
