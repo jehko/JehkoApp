@@ -15,8 +15,13 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .main {
-  // background-color: red;
+  background-image: url(../assets/img/background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
 </style>
