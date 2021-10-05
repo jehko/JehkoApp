@@ -14,6 +14,14 @@
             <button type="submit">로그인</button>
           </div>
         </form>
+        <div class="login-others">
+          <p>다른 방법으로 로그인</p>
+          <ul class="login-others-list">
+            <li class="login-others-item"><button class="login-kakao"></button></li>
+            <li class="login-others-item"><button class="login-google"></button></li>
+            <li class="login-others-item"><button class="login-naver"></button></li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -49,7 +57,6 @@ export default {
 .login-body {
   @media only screen and (min-width: 740px) {
     margin: 0 auto -236px;
-    // min-height: 100vh;
     background-color: transparent;
     max-width: 450px;
   }
@@ -86,19 +93,20 @@ export default {
         font-weight: 700;
         margin-bottom: 28px;
       }
-      input {
+      .input-wrapper input {
         border: 0;
         border-radius: 4px;
+        box-sizing: border-box;
         font-size: 16px;
         font-weight: 700;
         background: #e8f0fe;
         line-height: 50px;
         margin: 5px 0px;
         padding: 0 10px;
-        width: calc(100% - 20px);
+        width: 100%;
       }
       
-      button {
+      .submit-wrapper button {
         border-radius: 4px;
         border: 0;
         font-size: 16px;
@@ -114,7 +122,41 @@ export default {
         background: #e50914;
         color: white;
       }
-      
+    }
+  }
+  .login-others {
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    margin-top: 10px;
+    p {
+      padding: 10px 0;
+      color: white;
+      font-size: 14px;
+    }
+    .login-others-list {
+      .login-others-item {
+        float: left;
+        margin-right: 10px;
+        button {
+          width: 42px;
+          height: 42px;
+          border: 0;
+          border-radius: 50%;
+          background-position: center;
+          &.login-kakao {
+            background-image: url(../assets/img/icon/kakao-icon.png);
+            background-size: 130%;
+            background-position: 30% 50%;
+          }
+          &.login-google {
+            background-image: url(../assets/img/icon/google-icon.png);
+            background-size: 130%;
+          }
+          &.login-naver {
+            background-image: url(../assets/img/icon/naver-icon.png);
+            background-size: 130%;
+          }
+        }
+      }
     }
   }
 }
