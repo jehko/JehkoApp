@@ -28,8 +28,19 @@
 </template>
 
 <script>
+import { computed } from 'vue';
+import { useStore } from 'vuex';
+
 export default {
   name: 'Login',
+  setup() {
+    const store = useStore();
+
+    return {
+      getToken: computed(() => store.getters.getToken),
+      setToken: (payload) => store.commit('setToken', payload)
+    }
+  },
   data: () => ({
     id: '',
     password: ''
@@ -39,11 +50,13 @@ export default {
   },
   methods: {
     onSubmit () {
-      const payload = { id: this.id, password: this.password }
+      const _ = this;
+      const payload = { id: _.id, password: _.password }
 
-      this.axios.post('http://localhost:8080/api/v1/auth/login', payload).then(res => {
+      _.axios.post(`${process.env.VUE_APP_BASE_URL_API}/v1/auth/login`, payload).then(res => {
         if(res.data?.token) {
-          this.$router.push({
+          _.setToken(res.data.token);
+          _.$router.push({
             name: 'Home'
           })
         }
@@ -74,6 +87,7 @@ export default {
     width: 100%;
     @media only screen and (min-width: 500px) {
       min-width: 380px;
+      padding: 30px 40px;
     }
     @media only screen and (min-width: 740px) {
       min-height: 660px;
@@ -160,6 +174,4 @@ export default {
     }
   }
 }
-
-
 </style>
