@@ -2,14 +2,13 @@ import { createStore } from 'vuex';
 
 export default createStore({
   state: {
-    token: ''
   },
   getters: {
-    getToken: state => state.token
+    getToken: () => (sessionStorage.getItem('token') || '')
   },
   mutations: {
     setToken(state, value) {
-      state.token = value;
+      sessionStorage.setItem('token', value);
     }
   }
 })

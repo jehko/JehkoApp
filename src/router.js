@@ -8,7 +8,7 @@ const router = createRouter({
   routes: [
     {
       path: "/",
-      name: "main",
+      name: "Main",
       component: Main
     },
     {
@@ -21,8 +21,7 @@ const router = createRouter({
 
 router.beforeEach((to, from, next) => {
   if (to.path !== '/') {
-    console.log(store.state.token)
-    if (!store.getters.getToken) {
+    if (!store.getters.getToken || store.getters.getToken === '') {
       next({
         path: '/'
       });
